@@ -1,0 +1,15 @@
+!--------------
+! fabm_pelagic namelist
+! =====================
+! dt - timestep (s)
+! ode_method - 1: Runge-Kutta 4th order, 2: adaptive Euler,
+!              3: 3/8-rule Runge-Kutta 4th order, 0: Euler 1st order
+!--------------
+&fabm_pelagic
+ dt=480.
+ dt_min=1.0
+ ode_method=3
+ albedo_const=0.88
+ background_extinction=0.
+/
+
