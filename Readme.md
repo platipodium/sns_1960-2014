@@ -1,9 +1,15 @@
 # SNS 1960 - 2014
 
 Configuration of the MOSSCO coupled system for simulating the Southern
-North Sea (SNS) 1960-2014.
+North Sea (SNS) 1960-2014.  The material presented here is freely available under
+the terms of the CC0 1.0 Universal Public Domain Dedication, the `License.md` for 
+the full license terms.
 
-To be published as Xu et al. 2020 (Frontiers)
+The material presented here was created by Richard Hofmeister, Carsten Lemmen, 
+Knut Klingbeil and Kai W Wirtz.
+
+To be published as as supplement to Xu et al. 2020 "Less nutrients but more phytoplankton:
+long-term ecosystem dynamics of the southern North Sea"
 
 ## Coupled system (MOSSCO) configuration
 
