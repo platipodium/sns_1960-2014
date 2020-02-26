@@ -1,0 +1,79 @@
+!-------------------------------------------------------------------------------
+! MAECS switches
+!-------------------------------------------------------------------------------
+! RubiscoOn      [bool]
+!                  use Rubisco- here in C-units
+! PhotoacclimOn  [bool]
+!                  use Photoacclimation
+! PhosphorusOn   [bool]
+!                  resolve Phosphorus cycle
+! SiliconOn      [bool]
+!                  resolve Silicon cycle
+! GrazingOn      [bool]
+!                  use Zooplankton grazing
+! BioOxyOn       [bool]
+!                  use oxygen&ODU from OMEXDIA
+! DebugDiagOn    [bool]
+!                  output of volatile diagnostics for debugging
+! Budget0DDiagOn [bool]
+!                  output of elemental budgets (totX)
+! Budget2DDiagOn [bool]
+!                  output of vertical budget integrals (totX_vertint/diag)
+! BGC0DDiagOn    [bool]
+!                  output of local rates (GPP, Denit,...) and states (NO3)
+! BGC2DDiagOn    [bool]
+!                  output of BGC fluxes (O,C,N)
+! PhysiolDiagOn  [bool]
+!                  output of ecophysiological/allocation/acclimation variables
+! RateDiagOn     [bool]
+!                  output of phytoplankton growth and loss rate contributions
+! ChemostatOn    [bool]
+!                  use Chemostat mode 
+! VirusOn       [bool]
+!                  use dynamic virus variable
+! SwitchOn       [bool]
+!                  use experimental mode 1
+! GrazTurbOn     [integer]
+!                  > 0 use water clarity as proxy for top-predation 
+! NResOn         [bool]
+!                  use long-term N-reservoir
+! kwFzmaxMeth    [integer]
+!                  background extinction method
+! genMeth        [integer]
+!                  dummy method switch
+! detritus_no_river_dilution [bool]
+!                  use riverine det import
+! plankton_no_river_dilution [bool]
+!                  use riverine phy import
+! nutrient_no_river_dilution [bool]
+!                  use riverine nut import
+!-------------------------------------------------------------------------------
+
+&maecs_switch
+   RubiscoOn = .true.,
+   PhotoacclimOn = .true.,
+   PhosphorusOn = .true.,
+   SiliconOn = .false., 
+   GrazingOn = .true.,
+   BioOxyOn = .false.,
+   DebugDiagOn = .false.,
+   Budget0DDiagOn = .false.,
+   Budget2DDiagOn = .false.,
+   BGC0DDiagOn = .false.,
+   BGC2DDiagOn = .false.,
+   PhysiolDiagOn = .false.,
+   GrazTurbOn = 8,
+   SwitchOn = .false.,
+   RateDiagOn = .false.,
+   ChemostatOn = .false.,
+   VirusOn= .true.,
+   NResOn = .false.,
+   kwFzmaxMeth = 4,
+   genMeth = -4,
+   detritus_no_river_dilution=.false.,
+   plankton_no_river_dilution=.false.,
+   nutrient_no_river_dilution=.false.,
+/
+
+
+

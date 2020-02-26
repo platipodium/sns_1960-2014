@@ -1,0 +1,44 @@
+!-------------------------------------------------------------------------------
+! hzg_omexdia_p --- FABM/F03 version of OMEXDIA+P biogeochemical model
+!-------------------------------------------------------------------------------
+! rPAds      [float, unit = ] #BioOxyOn
+!             Adsorption coeff phosphorus
+! PAdsODU    [float, unit = ] #BioOxyOn
+!             PO4-Fe dissolution threshold in terms of [FeS]/ODU
+! rnit       [float, unit = 1/d] #BioOxyOn
+!             Max nitrification rate
+! ksO2nitri  [float, unit = umolO2/m3] #BioOxyOn
+!             half-sat O2 in nitrification
+! rODUox     [float, unit = 1/d] #BioOxyOn
+!             Max rate oxidation of ODU
+! ksO2oduox  [float, unit = mmolO2/m3] #BioOxyOn
+!             half-sat O2 in oxidation of ODU
+! ksO2oxic   [float, unit = mmolO2/m3] #BioOxyOn
+!             half-sat O2 in oxic mineralis
+! ksNO3denit [float, unit = mmolNO3/m3] #BioOxyOn
+!             half-sat NO3 in denitrif
+! kinO2denit [float, unit = mmolO2/m3] #BioOxyOn
+!             half-sat O2 inhib denitrif
+! kinNO3anox [float, unit = mmolNO3/m3] #BioOxyOn
+!             half-sat NO3 inhib anoxic min
+! kinO2anox  [float, unit = mmolO2/m3] #BioOxyOn
+!             half-sat O2 inhib anoxic min
+! rAnammox  [float, unit = 1/d] #BioOxyOn
+!             anammox rate
+!-------------------------------------------------------------------------------
+
+&maecs_omex
+   rPAds          = 0.0
+   PAdsODU        = 12.
+   rnit           = 12.
+   ksO2nitri      = 20.
+   rODUox         = 20.
+   ksO2oduox      = 1.
+   ksO2oxic       = 3. 
+   ksNO3denit     = 20.
+   kinO2denit     = 1.
+   kinNO3anox     = 1.
+   kinO2anox      = 5.
+   rAnammox       = 0.025
+/
+

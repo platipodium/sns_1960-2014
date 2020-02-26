@@ -1,0 +1,56 @@
+!-------------------------------------------------------------------------------
+! MAECS environment parameters
+!-------------------------------------------------------------------------------
+! a_water  [float, unit = 1/m]
+!            background attenuation coefficient
+! a_minfr  [float, unit = -]
+!            heuristic depth-dep attenuation
+! a_spm    [float, unit = m**3/m.mmolC] *0.003 0.012 3
+!            attenuation coefficient of SPM
+! a_phyc    [float, unit = m**3/m.mmolC] *0.003 0.012 3
+!            attenuation coefficient of PhyC
+! a_doc    [float, unit = m**3/m.mmolC] *0.003 0.012 3
+!            attenuation coefficient of DOC
+! a_fz    [float, unit = -]
+!            depth dependent turbidity gradient
+! a_chl    [float, unit = m**3/m.mgChl] *0.005 0.015 2
+!            attenuation coefficient due to Chl absorption
+! rel_co2  [float, unit = -]  **25 50 2
+!            relative CO2 conc in sea water 
+! frac_PAR [float]
+!            photosynthetically active fraction of light
+! small    [float]
+!            lower limit for denominator in ratios; small_finite=sqrt(small)
+! maxVal   [float] *-10 -13 4
+!            upper limit for trait variables; <0: also no mininum check
+! dil      [float, unit = 1/d]
+!            dilution of all concentrations except dissolved inorganics
+! ex_airsea [float, unit = m/s] #BioOxyOn
+!            diffusivity coefficient (m2/s) divided by boundary layer thickness
+! O2_sat    [float, unit = mmol-O2/m2.d] #BioOxyOn
+!            oxygen concentration in air-sea boundary layer
+! N_depo    [float, unit = mmol-N/m2.d]        
+!            DIN deposition rate 0.5  6-21mg/m2.d Grieken2007 - 
+! P_depo    [float, unit = mmol-P/m2.d]        
+!            DIP deposition rate 
+!-------------------------------------------------------------------------------
+
+&maecs_env
+   a_water = 1.,
+   a_minfr = 0.18, 
+   a_phyc = 0.002, 
+   a_doc = 0.0001, 
+   a_spm = 0.002, 
+   a_fz = 9.9,
+   a_chl = 0.01, 
+   rel_co2 = -1, 
+   frac_PAR = 4.8,
+   small = 29e-6,
+   maxVal = 300, 
+   dil = 0.0, 
+   ex_airsea = 3e-5, 
+   O2_sat = 300.,
+   N_depo = 0.,
+   P_depo = 0.00,
+/
+

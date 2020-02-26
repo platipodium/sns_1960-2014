@@ -1,0 +1,154 @@
+!-------------------------------------------------------------------------------
+! MAECS parameters "median"
+!-------------------------------------------------------------------------------
+! P_max    [float, unit = d^{-1}] $P_\mathrm{max}$ ~3 4 2 
+!        maximum potential photosynthetic rate
+! alpha    [float, unit = m2 mol-C/(muE g-CHL)] $\alpha$ ~0.13 0.17 3
+!        specific light adsorption by chloroplasts 
+! sigma    [float] $\sigma$ *0. 1. 2
+!        Q-dependency of Rubisco activity/chloroplast ratio
+! theta_LHC    [float, unit = mgChl mmolC^{-1}] $\theta_\mathrm{C}$ ~1.4 1.8 3
+!        chlorophyll a-to-C ratio of LHC
+! rel_chloropl_min [float, unit = mol-C/mol-C]
+!        chloroplast-C to phy-C ratio
+! QN_phy_0   [float, unit = mol-N/mol-C] $Q_{\mathrm{N}0}$ *0.05 0.075 3
+!        subsistence N-quota
+! QN_phy_max   [float, unit = mol-N/mol-C] $Q_\mathrm{N}^\mathrm{ref}$ ~0.15 0.17 3
+!        maximum N-quota
+! V_NC_max   [float, unit = mmol-N/(m3 d)] $V_\mathrm{max,N}^0$ *1. 1.4 2 
+!        maximum N uptake rate
+! AffN     [float, unit = m3/(mmol-N d)] $A_\mathrm{N}^0$ *0.1 0.4 2
+!        N-Affinity
+! zeta_CN    [float, unit = mol-C/mol-N] $\zeta_\mathrm{CN}$ ~2.2 2.8 3 
+!        respiratory costs of N-synthesis/NO3-reduction
+! zstoich_PN   [float, unit = mol-N/mol-P] ~0. 0.2 2
+!        P-stoichiometry of active compounds(-> P costs)
+! exud_phy   [float]
+!        phytoplankton exudation per production
+! QP_phy_0   [float, unit = mol-P/mol-C] $Q_{\mathrm{P}0}$ *0.00 0.0004 2 #PhosphorusOn
+!        subsistence P-quota
+! QP_phy_max   [float, unit = mol-P/mol-C] $Q_\mathrm{P}^\mathrm{ref}$ ~0.006 0.0065 2 #PhosphorusOn
+!        subsistence P-quota
+! V_PC_max   [float, unit = mol-P/(mol-C d)] $V_\mathrm{max,P}^0$ ~0.19 0.25 2 #PhosphorusOn
+!        maximum P uptake rate
+! AffP     [float, unit = m3/(mmol-C d)] $A_\mathrm{P}^0$ *0.08 0.2 2 #PhosphorusOn
+!        P-Affinity
+! QSi_phy_0    [float, unit = mol-Si/mol-C] $Q_{\mathrm{Si}0}$ #SiliconOn
+!        subsistence Si-quota
+! QSi_phy_max  [float, unit = mol-Si/mol-C] $Q_\mathrm{Si}^\mathrm{ref}$ *0.04 0.08 4 #SiliconOn
+!        subsistence Si-quota
+! V_SiC_max    [float, unit = mol-Si/(mol-C d)] $V_\mathrm{max,Si}^0$ *0.08 0.3 4  #SiliconOn
+!        maximum Si-uptake rate
+! AffSi    [float, unit = m3/(mmol-C d)] $A_\mathrm{Si}^0$ #SiliconOn
+!        Si-Affinity
+! MaxRelQ    [float, unit =-] $\mathrm{max}q$ *0.04 0.08 4 
+!        upper bound for relative quota
+! syn_nut    [float, unit = ] $1/h$ ~-4. -3. 3
+!        synchrony nqueue in nutrient quota limitation
+! adap_rub   [float, unit = ] $\delta_R$ *0. 1. 2 #PhotoacclimOn
+!        adap_rub
+! adap_theta   [float, unit = ] $\delta_\theta$ *0. 1. 2 #PhotoacclimOn
+!        adap_theta
+! tau_regV   [float] $\Delta t_\mathrm{v}$
+!        tau-regV
+! disease    [float, unit = d^{-1}]
+!        parasites/disease mortality rate ; TODO:not implemented yet
+! mort_ODU   [float, unit = m3/mmol-ODU.d] #BioOxyOn
+!        toxic stress due to H2S 
+! decay_pigm   [float, unit = 1/d] #PhotoacclimOn
+!        pigment decay rate 
+! decay_nut    [float, unit = 1/d] 
+!        non-carbon structure decay rate 
+! phi_agg    [float, unit = m^6 mmol-N^{-2} d^{-1}] *2E-4 5E-4 3
+!        quadratic aggregation rate
+! agg_doc    [float, unit = m^-3 mmol-C]
+!        DOC multiplier in coagulation term
+! vir_loss   [float, unit = - ] *2E-4 5E-4 3
+!        specific loss/exudation rate of infected phy
+! vir_mu     [float, unit = 1/d] 
+!        viral growth rate (=vir_loss)
+! vir_infect    [float, unit = m3/d.mol-C] 
+!        specific infection rate rate (not used)
+! vir_phyC    [float, unit = mmol-C/m3] 
+!        phy conc where infection diversity = 1 
+! vir_spor_r    [float, unit = -] 
+!        death and spore building rate of virus
+! vir_spor_C    [float, unit = -] 
+!        virus concentration with max spore building  
+! sink_phys    [float, unit = ]
+!        sinking sensitivity on physiological status
+! vS_phy     [float, unit = m d^{-1}]
+!        sinking velocity for phytoplankton
+! vS_det     [float, unit = m d^{-1}]
+!        sinking velocity for detritus at 100 mmol-C/m3
+! hydrol     [float, unit = d^{-1}]
+!        degradation rate of most refractory POM
+! remin    [float, unit = d^{-1}]
+!        pel.remineralisation rate of most refractory DOM
+! Nqual    [float, unit = ]
+!        quality increase with ON/OC (0:no effect; 1: full linearity)
+! remNP    [float, unit = ]
+!        relative P-stoichiometry in preferential (high N) remin
+! denit    [float, unit = d^{-1}]
+!        DIN removal by denitrification  
+! PON_denit    [float, unit = mmol-N/m3 ]
+!        critical PON for denitrification  
+! Q10      [float, unit = ]
+!        Q10 factor
+! T_ref    [float, unit = K]
+!        reference Kelvin temperature
+! NutOrder   [float, unit = serial order number N:P:Si]
+!        element order of recursive scheme. lower digit: synchrony element 
+!-------------------------------------------------------------------------------
+
+&maecs_pars
+ P_max = 10., 
+ alpha = 0.22, 
+ sigma = 1.0, 
+ theta_LHC = 0.6, 
+ rel_chloropl_min = 0.02,
+ QN_phy_0 = 0.04, 
+ QN_phy_max = 0.16, 
+ V_NC_max = 0.7, 
+ AffN = 0.4, 
+ zeta_CN = 4, 
+ zstoich_PN = 6, 
+ exud_phy = 0.,
+ QP_phy_0 = 0.00, 
+ QP_phy_max = 0.009, 
+ V_PC_max = 0.15, 
+ AffP = 0.1, 
+ QSi_phy_0 = 0.02,
+ QSi_phy_max = 0.2,
+ V_SiC_max = 0.7,
+ AffSi = 0.3,
+ MaxRelQ = 3.,
+ syn_nut = -4., 
+ adap_rub = 1.0,
+ adap_theta = 1.0,
+ tau_regV = 15.0,
+ disease = 0 
+ mort_ODU = -31
+ decay_pigm = 0.0
+ decay_nut = 0.01
+ phi_agg = 0.006, 
+ agg_doc = 0.015, 
+ vir_loss = 1.,
+ vir_mu = -0.3, 
+ vir_infect = 4.2, 
+ vir_spor_r = 0.15,
+ vir_spor_C = 0.0005
+ vir_phyC = 2,
+ sink_phys = -14.,
+ vS_phy = 5,
+ vS_det = 35,
+ hydrol = 0.015,
+ remin = 0.015,
+ Nqual = 0.95,
+ remNP = -0.001, 
+ denit = 0. 
+ PON_denit = 5 
+ Q10 = 1.5 
+ T_ref = 289.0,
+ NutOrder = 123.2,
+/

@@ -1,0 +1,37 @@
+!-------------------------------------------------------------------------------
+! MAECS grazing
+!-------------------------------------------------------------------------------
+! const_NC_zoo   [float, unit = mol/mol]
+!                  zooplankton N:C ratio
+! const_PC_zoo   [float, unit = mol/mol] #PhosphorusOn
+!                  zooplankton P:C ratio
+! g_max          [float, unit = per d] #GrazingOn
+!                  maximum grazing rate
+! k_grazC        [float, unit = mmolN/m**3] #GrazingOn
+!                  half saturation graing
+! yield_zoo      [float] #GrazingOn
+!                  yield of herbivory
+! basal_resp_zoo [float, unit = per d] #GrazingOn
+!                  basal respiration
+! mort_zoo       [float, unit = m**3/mmolN.d] #GrazingOn
+!                  quadratic mortality
+! zm_fa_delmax   [float, unit = m**3/mmolN.d] #GrazingOn
+!                  max.increase factor in attenuation-dependent mort.rate (only active if mort_zoo<0)
+! zm_fa_inf      [float, unit = - ] #GrazingOn
+!                  infliction point of the att. function of mort.rate (only active if mort_zoo<0)
+! fT_exp_mort    [float, unit = m**3/mmolN.d] #GrazingOn
+!                  exponent temperature dep. mortality (1: standard)
+!-------------------------------------------------------------------------------
+
+&maecs_graz
+   const_NC_zoo = 0.25,
+   const_PC_zoo = 0.02,
+   g_max = 1.1,
+   k_grazC = 3.5,
+   yield_zoo = 0.4,
+   basal_resp_zoo = 0.095,
+   mort_zoo = 0.021,
+   zm_fa_delmax = 24,
+   zm_fa_inf = 1.,
+   fT_exp_mort = 3.,
+/

@@ -1,0 +1,74 @@
+!-------------------------------------------------------------------------------
+! MAECS initialisation
+!-----------------------------------------------------------------------
+! nutN_initial     [float, unit = mmol-N/m**3]
+!                   initial Dissolved Inorganic Nitrogen DIN
+! nutP_initial     [float, unit = mmol-P/m**3] #PhosphorusOn
+!                   initial Dissolved Inorganic Phosphorus DIP
+! nutS_initial     [float, unit = mmol-Si/m**3] #SiliconOn
+!                   initial Dissolved Inorganic Silicon Si
+! phyC_initial     [float, unit = mmol-C/m**3] !TT trait transporter
+!                   initial Phytplankton Carbon
+! phyN_initial     [float, unit = mmol-N/m**3]
+!                   initial Phytplankton Nitrogen
+! phyP_initial     [float, unit = mmol-P/m**3] #PhosphorusOn
+!                   initial Phytplankton Phosphorus
+! phyS_initial     [float, unit = mmol-Si/m**3] #SiliconOn
+!                   initial Phytplankton Silicon
+! zooC_initial     [float, unit = mmol-C/m**3] #GrazingOn
+!                   initial Zooplankton Carbon
+! detC_initial     [float, unit = mmol-C/m**3]
+!                   initial Detritus Carbon
+! detN_initial     [float, unit = mmol-N/m**3]
+!                   initial Detritus Nitrogen
+! detP_initial     [float, unit = mmol-P/m**3] #PhosphorusOn
+!                   initial Detritus Phosphorus
+! detS_initial     [float, unit = mmol-Si/m**3] #SiliconOn
+!                   initial Detritus Silicon
+! domC_initial     [float, unit = mmol-C/m**3]
+!                   initial Dissolved Organic Carbon
+! domN_initial     [float, unit = mmol-N/m**3]
+!                   initial Dissolved Organic Nitrogen
+! domP_initial     [float, unit = mmol-P/m**3] #PhosphorusOn
+!                   initial Dissolved Organic Phosphorus
+! RNit_initial     [float, unit = mmol-N/m**3] EE #NResOn
+!                   initial N-reservoir
+! frac_Rub_ini    [float, unit = -] #RubiscoOn
+!                   initial fraction of Rubisco
+! frac_chl_ini    [float, unit = mg-Chl/m**3] #PhotoacclimOn
+!                   initial Chl
+! nh3_initial  [float, unit = mmolN/m**3] EE #BioOxyOn
+/bin/bash: indent: command not found
+! oxy_initial  [float, unit = mmolO2/m**3] EE #BioOxyOn
+!       dissolved oxygen
+! odu_initial  [float, unit = mmolO2/m**3] EE #BioOxyOn
+!       dissolved reduced substances
+! vir_initial     [float, unit = -] #VirusOn
+!                   initial Virus C density in cells
+!-------------------------------------------------------------------------
+
+&maecs_init
+ nutN_initial = 25, 
+ nutP_initial = 0.7, 
+ nutS_initial = 9, 
+   zooC_initial = 0.2,
+ phyC_initial = 2, 
+ phyN_initial = 0.2, 
+ phyP_initial = 0.02, 
+   phyS_initial = 1.,
+   detC_initial = 5,
+   detN_initial = 1.,
+   detP_initial = 0.1,
+   detS_initial = 0.,
+   domC_initial = 60.0,
+   domN_initial = 4.0,
+   domP_initial = 0.1,
+   RNit_initial = 0.,
+   frac_Rub_ini = 0.2,
+   frac_chl_ini = 0.3,
+   nh3_initial  = 0.
+   oxy_initial  = 300.
+   vir_initial  = 0.1
+   odu_initial  = 0.
+/
+
